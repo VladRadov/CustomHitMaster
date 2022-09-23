@@ -11,18 +11,22 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Weapon _weapon;
 
+    private Camera _camera;
+
     public Vector3 CurrentPosition => new Vector3(transform.position.x, 0, transform.position.z);
 
     private void Start()
     {
         _baseAnimator.EntryAnimatorController("Player", gameObject);
+        _camera = Camera.main;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.touchCount != 0)
         {
-            Vector3 screenPoint = Camera.main.ScreenPointToRay(Input.mousePosition).direction;
+            var target = Input.touchCount != 0 ? new Vector3(Input.touches[0].position.x, Input.touches[0].position.y, 1) : Input.mousePosition;
+            Vector3 screenPoint = _camera.ScreenPointToRay(target).direction;
             _weapon.Shot(transform.position, new Vector3(screenPoint.x, screenPoint.y + 0.3f, screenPoint.z));
         }
 

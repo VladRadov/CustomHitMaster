@@ -57,16 +57,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Models\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Models\Health.cs" />
+    <Compile Include="Assets\Scripts\UI\ControlHealth.cs" />
     <Compile Include="Assets\Scripts\Models\Route.cs" />
     <Compile Include="Assets\Scripts\Models\BaseAnimator.cs" />
     <Compile Include="Assets\Scripts\Models\Player.cs" />
     <Compile Include="Assets\Scripts\Models\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Services\BaseSceneManager.cs" />
     <Compile Include="Assets\Scripts\Models\PoolBullet.cs" />
     <Compile Include="Assets\Scripts\Models\Enemy.cs" />
     <Compile Include="Assets\Scripts\Models\WayPoint.cs" />
-    <Compile Include="Assets\Scripts\Services\BaseSceneManager.cs" />
-    <Compile Include="Assets\Scripts\UI\ControlHealth.cs" />
-    <Compile Include="Assets\Scripts\Models\Health.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
